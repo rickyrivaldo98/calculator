@@ -87,23 +87,31 @@ class App extends Component {
     // this.setState((prevState) => ({
     //   number: prevState.number + parseInt(this.state.incrementNumber),
     // }));
-
-    add = add + parseInt(this.state.incrementNumber);
-    if (this.state.number == 0) {
-      this.setState({
-        number: this.state.incrementNumber,
-        incrementNumber: 0,
-        Proces: this.state.Proces + e.target.value,
-        lastOperator: this.state.lastOperator + e.target.value,
-      });
+    if (this.state.incrementNumber !== 0) {
+      add = add + parseInt(this.state.incrementNumber);
+      if (this.state.number == 0) {
+        this.setState({
+          number: this.state.incrementNumber,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: this.state.lastOperator + e.target.value,
+        });
+      } else {
+        this.setState({
+          number: parseInt(this.state.number) + add,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: e.target.value,
+        });
+      }
     } else {
       this.setState({
-        number: parseInt(this.state.number) + add,
-        incrementNumber: 0,
         Proces: this.state.Proces + e.target.value,
         lastOperator: e.target.value,
       });
     }
+    // this.sum();
+
     console.log(add);
     add = 0;
     // console.log(Number(add));
@@ -113,18 +121,25 @@ class App extends Component {
     // this.setState((prevState) => ({
     //   number: prevState.number + parseInt(this.state.incrementNumber),
     // }));
-    min = min + parseInt(this.state.incrementNumber);
-    if (this.state.number == 0) {
-      this.setState({
-        number: this.state.incrementNumber,
-        incrementNumber: 0,
-        Proces: this.state.Proces + e.target.value,
-        lastOperator: this.state.lastOperator + e.target.value,
-      });
+    if (this.state.incrementNumber !== 0) {
+      min = min + parseInt(this.state.incrementNumber);
+      if (this.state.number == 0) {
+        this.setState({
+          number: this.state.incrementNumber,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: this.state.lastOperator + e.target.value,
+        });
+      } else {
+        this.setState({
+          number: parseInt(this.state.number) - min,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: e.target.value,
+        });
+      }
     } else {
       this.setState({
-        number: parseInt(this.state.number) - min,
-        incrementNumber: 0,
         Proces: this.state.Proces + e.target.value,
         lastOperator: e.target.value,
       });
@@ -137,18 +152,25 @@ class App extends Component {
     // this.setState((prevState) => ({
     //   number: prevState.number + parseInt(this.state.incrementNumber),
     // }));
-    mul = mul + parseInt(this.state.incrementNumber);
-    if (this.state.number == 0) {
-      this.setState({
-        number: this.state.incrementNumber,
-        incrementNumber: 0,
-        Proces: this.state.Proces + e.target.value,
-        lastOperator: this.state.lastOperator + e.target.value,
-      });
+    if (this.state.incrementNumber !== 0) {
+      mul = mul + parseInt(this.state.incrementNumber);
+      if (this.state.number == 0) {
+        this.setState({
+          number: this.state.incrementNumber,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: this.state.lastOperator + e.target.value,
+        });
+      } else {
+        this.setState({
+          number: parseInt(this.state.number) * mul,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: e.target.value,
+        });
+      }
     } else {
       this.setState({
-        number: parseInt(this.state.number) * mul,
-        incrementNumber: 0,
         Proces: this.state.Proces + e.target.value,
         lastOperator: e.target.value,
       });
@@ -170,18 +192,25 @@ class App extends Component {
     // this.setState((prevState) => ({
     //   number: prevState.number + parseInt(this.state.incrementNumber),
     // }));
-    div = div + parseInt(this.state.incrementNumber);
-    if (this.state.number == 0) {
-      this.setState({
-        number: this.state.incrementNumber,
-        incrementNumber: 0,
-        Proces: this.state.Proces + e.target.value,
-        lastOperator: this.state.lastOperator + e.target.value,
-      });
+    if (this.state.incrementNumber !== 0) {
+      div = div + parseInt(this.state.incrementNumber);
+      if (this.state.number == 0) {
+        this.setState({
+          number: this.state.incrementNumber,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: this.state.lastOperator + e.target.value,
+        });
+      } else {
+        this.setState({
+          number: parseInt(this.state.number) / div,
+          incrementNumber: 0,
+          Proces: this.state.Proces + e.target.value,
+          lastOperator: e.target.value,
+        });
+      }
     } else {
       this.setState({
-        number: parseInt(this.state.number) / div,
-        incrementNumber: 0,
         Proces: this.state.Proces + e.target.value,
         lastOperator: e.target.value,
       });
