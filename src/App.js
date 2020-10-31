@@ -157,6 +157,15 @@ class App extends Component {
     mul = 0;
   };
 
+  clear = (e) => {
+    this.setState({
+      number: 0,
+      incrementNumber: 0,
+      Proces: 0,
+      lastOperator: "",
+    });
+  };
+
   div = (e) => {
     // this.setState((prevState) => ({
     //   number: prevState.number + parseInt(this.state.incrementNumber),
@@ -247,7 +256,7 @@ class App extends Component {
               *
             </button>
             <br />
-            <button value="C" className="operator">
+            <button onClick={this.clear} value="C" className="operator">
               C
             </button>
             <button onClick={this.input} value="0">
